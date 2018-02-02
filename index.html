@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Controllore del passato prossimo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="c-card">
+			<h1 class="c-card__title">Controllore del passato prossimo</h1>
+			<form class="c-form  js-form" autocomplete="off" v-on:submit.prevent="onSubmit">
+				<span class="verb-helper">per il verbo...</span>
+				<span class="verb js-verb" v-bind:class="{'is--visible': currentVerb.verbInf}">{{currentVerb.verbInf}}</span>
+				<div class="c-form__wrapper-inputs">
+					<div class="c-form__input-wrapper">
+						<label class="verb-label" for="vbaux">Il verbo ausiliare</label>
+						<input type="text" class="verb-input  js-vb-aux" name="vbaux" placeholder="Scrivi qui il verbo ausiliare" ref="vbaux" v-model="inputAux" @keyup="waitForTyping" />
+						<span class="verb-status" v-if="verbAuxValid === true"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+						<span class="verb-status  wrong" v-if="verbAuxValid === false"><i class="fa fa-exclamation" aria-hidden="true"></i></span>
+					</div><!-- .c-form__input-wrapper -->
+					<div class="c-form__input-wrapper">
+						<label class="verb-label" for="vbpart">Il participio passato</label>
+						<input type="text" class="verb-input  js-vb-passato" name="vbpart" placeholder="Scrivi qui il participio passato" ref="vbpart" v-model="inputPart" @keyup="waitForTyping" />
+						<span class="verb-status" v-if="verbPartValid === true"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+						<span class="verb-status  wrong" v-if="verbPartValid === false"><i class="fa fa-exclamation" aria-hidden="true"></i></span>
+					</div><!-- .c-form__input-wrapper -->
+				</div><!-- .c-form__wrapper-inputs -->
+				<div class="c-form__wrapper-submit">
+					<!--button class="c-form__button  c-form__submit  js-submit" v-on:click="checkParticiple">Verificare</button-->
+					<button class="c-form__button  c-form__resolve  js-resolve" v-on:click="resolve">Risolvere</button>
+					<button class="c-form__button  c-form__next  js-next" v-on:click="setNewVerb">Un altro verbo</button>
+				</div><!-- .c-form__wrapper-submit -->
+			</form><!-- .c-form -->
+		</div><!-- .c-card -->
+	</div><!-- .wrapper -->
+</body>
+
+<script src="assets/js/vue.js"></script>
+<script src="assets/js/verbs.js"></script>
+<script src="assets/js/main.js"></script>
+
+</html>
