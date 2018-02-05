@@ -237,7 +237,7 @@ var verbs = [
 		verbPart: 'arso'
 	},
 	{
-		verbInf: 'arrabiarsi',
+		verbInf: 'arrabbiarsi',
 		verbAux: 'essere',
 		verbPart: 'arrabiato',
 		isReflexive: true

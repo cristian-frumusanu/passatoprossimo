@@ -2767,7 +2767,10 @@ th {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 20px; }
+  margin-top: 20px;
+  opacity: 0; }
+  .c-form__translations.is--visible {
+    opacity: 1; }
   .c-form__translations .c-translation {
     font-size: 14px;
     margin: 10px;
