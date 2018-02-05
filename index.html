@@ -13,7 +13,10 @@
 			<h1 class="c-card__title">Controllore del passato prossimo</h1>
 			<form class="c-form  js-form" autocomplete="off" v-on:submit.prevent="onSubmit">
 				<span class="verb-helper">per il verbo...</span>
-				<span class="verb js-verb" v-bind:class="{'is--visible': currentVerb.verbInf}">{{currentVerb.verbInf}}</span>
+				<span class="verb js-verb" v-bind:class="{'is--visible': currentVerb.verbInf}">
+					<span>{{currentVerb.verbInf}}</span>
+					<button class="button-translate" v-bind:class="{'is--enabled': translateEnabled}" @click="toggleTranslate"><i class="fa fa-language"></i></button>
+				</span>
 				<div class="c-form__wrapper-inputs">
 					<div class="c-form__input-wrapper">
 						<label class="verb-label" for="vbaux">Il verbo ausiliare</label>
@@ -33,8 +36,32 @@
 					<button class="c-form__button  c-form__resolve  js-resolve" v-on:click="resolve">Risolvere</button>
 					<button class="c-form__button  c-form__next  js-next" v-on:click="setNewVerb">Un altro verbo</button>
 				</div><!-- .c-form__wrapper-submit -->
+				<div class="c-form__translations" v-if="translateEnabled">
+					<div class="c-translation" v-if="verbEnglish !== null">
+						<span class="c-translation__flag"><span class="lang_code">EN</span></span>
+						<span class="c-translation__text">{{verbEnglish}}</span>
+					</div>
+					<div class="c-translation" v-if="verbFrench !== null">
+						<span class="c-translation__flag"><span class="lang_code">FR</span></span>
+						<span class="c-translation__text">{{verbFrench}}</span>
+					</div>
+					<div class="c-translation" v-if="verbSpanish !== null">
+						<span class="c-translation__flag"><span class="lang_code">SP</span></span>
+						<span class="c-translation__text">{{verbSpanish}}</span>
+					</div>
+					<div class="c-translation" v-if="verbPortughese !== null">
+						<span class="c-translation__flag"><span class="lang_code">PT</span></span>
+						<span class="c-translation__text">{{verbPortughese}}</span>
+					</div>
+					<div class="c-translation" v-if="verbPortughese !== null">
+						<span class="c-translation__flag"><span class="lang_code">RU</span></span>
+						<span class="c-translation__text">{{verbRussian}}</span>
+					</div>
+					<div class="c-translation__credit">Translation powered by <a href="https://translate.google.com">Google Translate</a></div>
+				</div>
 			</form><!-- .c-form -->
 		</div><!-- .c-card -->
+		<div class="contact-text">Problems/suggestions: <a href="mailto:contact@individual.ro">contact@individual.ro</a></div>
 	</div><!-- .wrapper -->
 </body>
 

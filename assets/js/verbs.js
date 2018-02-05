@@ -4,6 +4,18 @@ var verbs = [
 		verbAux: 'avere',
 		verbPart: 'acceso'
 	},
+    {
+        verbInf: 'accorgersi',
+        verbAux: 'essere',
+        verbPart: 'accorto',
+		isReflexive: true
+    },
+    {
+        verbInf: 'addormentarsi',
+        verbAux: 'essere',
+        verbPart: 'addormentato',
+		isReflexive: true
+    },
 	{
 		verbInf: 'aprire',
 		verbAux: 'avere',
@@ -65,6 +77,12 @@ var verbs = [
 		verbPart: 'messo'
 	},
 	{
+		verbInf: 'mettersi',
+		verbAux: 'essere',
+		verbPart: 'messo',
+		isReflexive: true
+	},
+	{
 		verbInf: 'morire',
 		verbAux: 'essere',
 		verbPart: 'morto'
@@ -80,6 +98,12 @@ var verbs = [
 		verbPart: 'perso'
 	},
 	{
+		verbInf: 'pettinarsi',
+		verbAux: 'essere',
+		verbPart: 'pettinato',
+		isReflexive: true
+	},
+	{
 		verbInf: 'piacere',
 		verbAux: 'essere',
 		verbPart: 'piaciuto'
@@ -88,6 +112,12 @@ var verbs = [
 		verbInf: 'prendere',
 		verbAux: 'avere',
 		verbPart: 'preso'
+	},
+	{
+		verbInf: 'radersi',
+		verbAux: 'essere',
+		verbPart: 'raso',
+		isReflexive: true
 	},
 	{
 		verbInf: 'ridere',
@@ -169,6 +199,17 @@ var verbs = [
 		verbAux: 'avere',
 		verbPart: 'aiutato'
 	},
+    {
+        verbInf: 'alzare',
+        verbAux: 'avere',
+        verbPart: 'alzato'
+    },
+    {
+        verbInf: 'alzarsi',
+        verbAux: 'essere',
+        verbPart: 'alzato',
+		isReflexive: true
+    },
 	{
 		verbInf: 'andare',
 		verbAux: 'essere',
@@ -177,7 +218,8 @@ var verbs = [
 	{
 		verbInf: 'annoiarsi',
 		verbAux: 'essere',
-		verbPart: 'annoiato'
+		verbPart: 'annoiato',
+		isReflexive: true
 	},
 	{
 		verbInf: 'appartenere',
@@ -193,6 +235,12 @@ var verbs = [
 		verbInf: 'ardere',
 		verbAux: 'essere',
 		verbPart: 'arso'
+	},
+	{
+		verbInf: 'arrabiarsi',
+		verbAux: 'essere',
+		verbPart: 'arrabiato',
+		isReflexive: true
 	},
 	{
 		verbInf: 'arrivare',
@@ -252,7 +300,8 @@ var verbs = [
 	{
 		verbInf: 'calmarsi',
 		verbAux: 'essere',
-		verbPart: 'calmato'
+		verbPart: 'calmato',
+		isReflexive: true
 	},
 	{
 		verbInf: 'cambiare',
@@ -293,6 +342,12 @@ var verbs = [
 		verbInf: 'chiamare',
 		verbAux: 'avere',
 		verbPart: 'chiamato'
+	},
+	{
+		verbInf: 'chiamarsi',
+		verbAux: 'essere',
+		verbPart: 'chiamato',
+		isReflexive: true
 	},
 	{
 		verbInf: 'cogliere',
@@ -414,6 +469,12 @@ var verbs = [
 		verbAux: 'avere',
 		verbPart: 'distrutto'
 	},
+    {
+        verbInf: 'divertersi',
+        verbAux: 'essere',
+        verbPart: 'divertito',
+		isReflexive: true
+    },
 	{
 		verbInf: 'divenire',
 		verbAux: 'essere',
@@ -462,7 +523,8 @@ var verbs = [
 	{
 		verbInf: 'fermarsi',
 		verbAux: 'essere',
-		verbPart: 'fermato'
+		verbPart: 'fermato',
+		isReflexive: true
 	},
 	{
 		verbInf: 'finire',
@@ -567,7 +629,7 @@ var verbs = [
 	{
 		verbInf: 'includere',
 		verbAux: 'avere',
-		verbPart: 'incluto'
+		verbPart: 'incluso'
 	},
 	{
 		verbInf: 'incontrare',
@@ -584,6 +646,12 @@ var verbs = [
 		verbAux: 'avere',
 		verbPart: 'informato'
 	},
+    {
+        verbInf: 'innamorarsi',
+        verbAux: 'essere',
+        verbPart: 'innamorato',
+		isReflexive: true
+    },
 	{
 		verbInf: 'insistere',
 		verbAux: 'avere',
@@ -605,6 +673,12 @@ var verbs = [
 		verbPart: 'lasciato'
 	},
 	{
+		verbInf: 'laurearsi',
+		verbAux: 'essere',
+		verbPart: 'laureato',
+		isReflexive: true
+	},
+	{
 		verbInf: 'lavare',
 		verbAux: 'avere',
 		verbPart: 'lavato'
@@ -612,121 +686,587 @@ var verbs = [
 	{
 		verbInf: 'lavarsi',
 		verbAux: 'essere',
-		verbPart: 'lavato'
+		verbPart: 'lavato',
+		isReflexive: true
 	},
 	{
 		verbInf: 'lavorare',
 		verbAux: 'avere',
 		verbPart: 'lavorato'
 	},
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
-	// {
-	// 	verbInf: '',
-	// 	verbAux: '',
-	// 	verbPart: ''
-	// },
+	{
+		verbInf: 'liberare',
+		verbAux: 'avere',
+		verbPart: 'liberato'
+	},
+	{
+		verbInf: 'lodare',
+		verbAux: 'avere',
+		verbPart: 'lodato'
+	},
+	{
+		verbInf: 'mandare',
+		verbAux: 'avere',
+		verbPart: 'mandato'
+	},
+	{
+		verbInf: 'mangiare',
+		verbAux: 'avere',
+		verbPart: 'mangiato'
+	},
+	{
+		verbInf: 'mantenere',
+		verbAux: 'avere',
+		verbPart: 'mantenuto'
+	},
+	{
+		verbInf: 'mentire',
+		verbAux: 'avere',
+		verbPart: 'mentito'
+	},
+	{
+		verbInf: 'meritare',
+		verbAux: 'avere',
+		verbPart: 'meritato'
+	},
+	{
+		verbInf: 'migliorare',
+		verbAux: 'avere/essere',
+		verbPart: 'migliorato'
+	},
+	{
+		verbInf: 'misurare',
+		verbAux: 'avere',
+		verbPart: 'misurato'
+	},
+	{
+		verbInf: 'modificare',
+		verbAux: 'avere',
+		verbPart: 'modificato'
+	},
+	{
+		verbInf: 'muovere',
+		verbAux: 'avere',
+		verbPart: 'mosso'
+	},
+	{
+		verbInf: 'navigare',
+		verbAux: 'avere',
+		verbPart: 'navigato'
+	},
+	{
+		verbInf: 'nevicare',
+		verbAux: 'avere/essere',
+		verbPart: 'nevicato'
+	},
+	{
+		verbInf: 'notificare',
+		verbAux: 'avere',
+		verbPart: 'notificato'
+	},
+	{
+		verbInf: 'obbligare',
+		verbAux: 'avere',
+		verbPart: 'obbligato'
+	},
+	{
+		verbInf: 'occupare',
+		verbAux: 'avere',
+		verbPart: 'occupato'
+	},
+	{
+		verbInf: 'offendere',
+		verbAux: 'avere',
+		verbPart: 'offeso'
+	},
+	{
+		verbInf: 'offrire',
+		verbAux: 'avere',
+		verbPart: 'offerto'
+	},
+	{
+		verbInf: 'ordinare',
+		verbAux: 'avere',
+		verbPart: 'ordinato'
+	},
+	{
+		verbInf: 'organizzare',
+		verbAux: 'avere',
+		verbPart: 'organizzato'
+	},
+	{
+		verbInf: 'ottendere',
+		verbAux: 'avere',
+		verbPart: 'ottenuto'
+	},
+	{
+		verbInf: 'pagare',
+		verbAux: 'avere',
+		verbPart: 'pagato'
+	},
+	{
+		verbInf: 'parlare',
+		verbAux: 'avere',
+		verbPart: 'parlato'
+	},
+	{
+		verbInf: 'partire',
+		verbAux: 'essere',
+		verbPart: 'partito'
+	},
+	{
+		verbInf: 'passare',
+		verbAux: 'avere/essere',
+		verbPart: 'passato'
+	},
+	{
+		verbInf: 'pensare',
+		verbAux: 'avere',
+		verbPart: 'pensato'
+	},
+	{
+		verbInf: 'perdere',
+		verbAux: 'avere',
+		verbPart: 'perso'
+	},
+	{
+		verbInf: 'piangere',
+		verbAux: 'avere',
+		verbPart: 'pianto'
+	},
+	{
+		verbInf: 'piovere',
+		verbAux: 'essere',
+		verbPart: 'piovuto'
+	},
+	{
+		verbInf: 'portare',
+		verbAux: 'avere',
+		verbPart: 'portato'
+	},
+	{
+		verbInf: 'potere',
+		verbAux: 'avere',
+		verbPart: 'potuto'
+	},
+	{
+		verbInf: 'preferire',
+		verbAux: 'avere',
+		verbPart: 'preferito'
+	},
+	{
+		verbInf: 'pulire',
+		verbAux: 'avere',
+		verbPart: 'pulito'
+	},
+	{
+		verbInf: 'raccomandare',
+		verbAux: 'avere',
+		verbPart: 'raccomandato'
+	},
+	{
+		verbInf: 'raccontare',
+		verbAux: 'avere',
+		verbPart: 'raccontato'
+	},
+	{
+		verbInf: 'raggiungere',
+		verbAux: 'avere',
+		verbPart: 'raggiunto'
+	},
+	{
+		verbInf: 'resistere',
+		verbAux: 'avere',
+		verbPart: 'resistito'
+	},
+	{
+		verbInf: 'respirare',
+		verbAux: 'avere',
+		verbPart: 'respirato'
+	},
+	{
+		verbInf: 'restituire',
+		verbAux: 'avere',
+		verbPart: 'restituito'
+	},
+	{
+		verbInf: 'riconoscere',
+		verbAux: 'avere',
+		verbPart: 'riconosciuto'
+	},
+	{
+		verbInf: 'ricordare',
+		verbAux: 'avere',
+		verbPart: 'ricordato'
+	},
+	{
+		verbInf: 'ridere',
+		verbAux: 'avere',
+		verbPart: 'riso'
+	},
+	{
+		verbInf: 'rifutare',
+		verbAux: 'avere',
+		verbPart: 'rifutato'
+	},
+	{
+		verbInf: 'rinnovare',
+		verbAux: 'avere',
+		verbPart: 'rinnovato'
+	},
+	{
+		verbInf: 'riscaldare',
+		verbAux: 'avere',
+		verbPart: 'riscaldato'
+	},
+	{
+		verbInf: 'risolvere',
+		verbAux: 'avere',
+		verbPart: 'risolto'
+	},
+	{
+		verbInf: 'rispondere',
+		verbAux: 'avere',
+		verbPart: 'risposto'
+	},
+	{
+		verbInf: 'ritrarre',
+		verbAux: 'avere',
+		verbPart: 'ritratto'
+	},
+    {
+        verbInf: 'riunire',
+        verbAux: 'avere',
+        verbPart: 'riunito'
+    },
+    {
+        verbInf: 'riuscire',
+        verbAux: 'essere',
+        verbPart: 'riuscito'
+    },
+    {
+        verbInf: 'rompere',
+        verbAux: 'avere',
+        verbPart: 'rotto'
+    },
+    {
+        verbInf: 'rubare',
+        verbAux: 'avere',
+        verbPart: 'rubato'
+    },
+    {
+		verbInf: 'stare',
+		verbAux: 'essere',
+		verbPart: 'stato'
+	},
+	{
+		verbInf: 'salire',
+		verbAux: 'essere',
+		verbPart: 'salito'
+	},
+	{
+		verbInf: 'saltare',
+		verbAux: 'avere/essere',
+		verbPart: 'saltato'
+	},
+	{
+		verbInf: 'salvare',
+		verbAux: 'avere',
+		verbPart: 'salvato'
+	},
+	{
+		verbInf: 'sapere',
+		verbAux: 'avere',
+		verbPart: 'saputo'
+	},
+	{
+		verbInf: 'sbagliare',
+		verbAux: 'avere',
+		verbPart: 'sbagliato'
+	},
+	{
+		verbInf: 'sbagliarsi',
+		verbAux: 'essere',
+		verbPart: 'sbagliato',
+		isReflexive: true
+	},
+	{
+		verbInf: 'scaldare',
+		verbAux: 'avere',
+		verbPart: 'scaldato'
+	},
+	{
+		verbInf: 'scegliere',
+		verbAux: 'avere',
+		verbPart: 'scelto'
+	},
+	{
+		verbInf: 'scopriere',
+		verbAux: 'avere',
+		verbPart: 'scoperto'
+	},
+	{
+		verbInf: 'sedere',
+		verbAux: 'avere',
+		verbPart: 'seduto'
+	},
+    {
+        verbInf: 'sedersi',
+        verbAux: 'essere',
+        verbPart: 'seduto',
+		isReflexive: true
+    },
+	{
+		verbInf: 'seguire',
+		verbAux: 'avere',
+		verbPart: 'seguito'
+	},
+	{
+		verbInf: 'sentire',
+		verbAux: 'avere',
+		verbPart: 'sentito'
+	},
+	{
+		verbInf: 'sentirsi',
+		verbAux: 'essere',
+		verbPart: 'sentito',
+		isReflexive: true
+	},
+	{
+		verbInf: 'separare',
+		verbAux: 'avere',
+		verbPart: 'separato'
+	},
+	{
+		verbInf: 'soffrire',
+		verbAux: 'avere',
+		verbPart: 'sofferto'
+	},
+	{
+		verbInf: 'sognare',
+		verbAux: 'avere',
+		verbPart: 'sognato'
+	},
+	{
+		verbInf: 'sorgere',
+		verbAux: 'essere',
+		verbPart: 'sorto'
+	},
+	{
+		verbInf: 'sorprendere',
+		verbAux: 'avere',
+		verbPart: 'sorpreso'
+	},
+	{
+		verbInf: 'sorprendersi',
+		verbAux: 'essere',
+		verbPart: 'sorpreso',
+		isReflexive: true
+	},
+	{
+		verbInf: 'spedire',
+		verbAux: 'avere',
+		verbPart: 'spedito'
+	},
+	{
+		verbInf: 'spegnere',
+		verbAux: 'avere',
+		verbPart: 'spento'
+	},
+	{
+		verbInf: 'spegnere',
+		verbAux: 'avere',
+		verbPart: 'speso'
+	},
+	{
+		verbInf: 'spingere',
+		verbAux: 'avere',
+		verbPart: 'spinto'
+	},
+	{
+		verbInf: 'sposare',
+		verbAux: 'avere',
+		verbPart: 'sposato'
+	},
+	{
+		verbInf: 'sposarsi',
+		verbAux: 'essere',
+		verbPart: 'sposato',
+		isReflexive: true
+	},
+	{
+		verbInf: 'studiare',
+		verbAux: 'avere',
+		verbPart: 'studiato'
+	},
+	{
+		verbInf: 'succedere',
+		verbAux: 'essere',
+		verbPart: 'succeduto'
+	},
+	{
+		verbInf: 'suonare',
+		verbAux: 'avere',
+		verbPart: 'suonato'
+	},
+	{
+		verbInf: 'svegliarsi',
+		verbAux: 'essere',
+		verbPart: 'svegliato',
+		isReflexive: true
+	},
+	{
+		verbInf: 'tagliare',
+		verbAux: 'avere',
+		verbPart: 'tagliato'
+	},
+	{
+		verbInf: 'temere',
+		verbAux: 'avere',
+		verbPart: 'temuto'
+	},
+	{
+		verbInf: 'temersi',
+		verbAux: 'essere',
+		verbPart: 'temuto',
+		isReflexive: true
+	},
+	{
+		verbInf: 'tenere',
+		verbAux: 'avere',
+		verbPart: 'tenuto'
+	},
+	{
+		verbInf: 'tentare',
+		verbAux: 'avere',
+		verbPart: 'tentato'
+	},
+	{
+		verbInf: 'tirare',
+		verbAux: 'avere',
+		verbPart: 'tirato'
+	},
+	{
+		verbInf: 'togliere',
+		verbAux: 'avere',
+		verbPart: 'tolto'
+	},
+	{
+		verbInf: 'tradurre',
+		verbAux: 'avere',
+		verbPart: 'tradotto'
+	},
+	{
+		verbInf: 'trasferire',
+		verbAux: 'avere',
+		verbPart: 'trasferito'
+	},
+	{
+		verbInf: 'trattare',
+		verbAux: 'avere',
+		verbPart: 'trattato'
+	},
+	{
+		verbInf: 'trovare',
+		verbAux: 'avere',
+		verbPart: 'trovato'
+	},
+	{
+		verbInf: 'turbarsi',
+		verbAux: 'essere',
+		verbPart: 'turbato',
+		isReflexive: true
+	},
+	{
+		verbInf: 'uccidere',
+		verbAux: 'avere',
+		verbPart: 'ucciso'
+	},
+	{
+		verbInf: 'umiliarsi',
+		verbAux: 'essere',
+		verbPart: 'umiliato',
+		isReflexive: true
+	},
+	{
+		verbInf: 'ungere',
+		verbAux: 'avere',
+		verbPart: 'unto'
+	},
+	{
+		verbInf: 'unire',
+		verbAux: 'avere',
+		verbPart: 'unito'
+	},
+	{
+		verbInf: 'urlare',
+		verbAux: 'avere',
+		verbPart: 'urlato'
+	},
+	{
+		verbInf: 'usare',
+		verbAux: 'avere',
+		verbPart: 'usato'
+	},
+	{
+		verbInf: 'uscire',
+		verbAux: 'essere',
+		verbPart: 'uscito'
+	},
+	{
+		verbInf: 'vendere',
+		verbAux: 'avere',
+		verbPart: 'venduto'
+	},
+	{
+		verbInf: 'verificare',
+		verbAux: 'avere',
+		verbPart: 'verificato'
+	},
+	{
+		verbInf: 'versare',
+		verbAux: 'avere',
+		verbPart: 'versato'
+	},
+	{
+		verbInf: 'vestirsi',
+		verbAux: 'essere',
+		verbPart: 'vestito',
+		isReflexive: true
+	},
+	{
+		verbInf: 'vietare',
+		verbAux: 'avere',
+		verbPart: 'vietato'
+	},
+	{
+		verbInf: 'vincere',
+		verbAux: 'avere',
+		verbPart: 'vinto'
+	},
+	{
+		verbInf: 'visitare',
+		verbAux: 'avere',
+		verbPart: 'visitato'
+	},
+	{
+		verbInf: 'volare',
+		verbAux: 'avere/essere',
+		verbPart: 'volato'
+	},
+	{
+		verbInf: 'volere',
+		verbAux: 'avere',
+		verbPart: 'voluto'
+	},
+	{
+		verbInf: 'volgere',
+		verbAux: 'avere',
+		verbPart: 'volto'
+	},
+	{
+		verbInf: 'votare',
+		verbAux: 'avere',
+		verbPart: 'votato'
+	},
 ];
