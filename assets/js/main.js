@@ -94,7 +94,7 @@ var verbApp = new Vue({
             // If the participle has not been filled,
 			// set the valid variable to a value that is
 			// not true neither valse
-            if( ! this.inputPart ) {
+            if ( ! this.inputPart ) {
                 this.verbPartValid = 'meh';
             } else {
                 var currentInputPart = this.inputPart.toLowerCase();
@@ -105,18 +105,17 @@ var verbApp = new Vue({
                     this.verbPartValid = true;
                     this.$refs.vbpart.blur();
                 } else
-				// If the aux is essere and the participle matches without the first letter
+				// If the aux is essere and the participle matches without the last letter
 				if ( this.currentVerb.verbAux === 'essere' &&
-				currentInputPart.substr( 0, currentInputPart.length - 1 ) === this.currentVerb.verbPart.substr( 0, this.currentVerb.verbPart.length - 1 ) ) {
-
+					currentInputPart.substr( 0, currentInputPart.length - 1 ) === this.currentVerb.verbPart.substr( 0, this.currentVerb.verbPart.length - 1 ) ) {
                 	// If the auxiliary has been checked
-                	if ( this.verbAuxValid === true  ) {
+                	if ( this.verbAuxValid === true ) {
                 		var partLastLetter = currentInputPart.slice(-1);
 
-                		// check for the concordance between the auxiliary and the past participle
-                        if ( ( ( this.inputAux.indexOf( conjEssere[0] ) !== -1 || this.inputAux.indexOf( conjEssere[1] ) !== -1 || this.inputAux.indexOf( conjEssere[2] ) !== -1 ) &&
+                		// Check for the concordance between the auxiliary and the past participle
+                        if ( ( ( conjEssereRifl[0].indexOf( this.inputAux ) !== -1 || conjEssereRifl[1].indexOf( this.inputAux ) !== -1 || conjEssereRifl[2].indexOf( this.inputAux ) !== -1 ) &&
 								( partLastLetter === 'o' || partLastLetter === 'a' ) ) || // the check for singular verb form
-							 ( ( this.inputAux.indexOf( conjEssere[3] ) !== -1 || this.inputAux.indexOf( conjEssere[4] ) !== -1 || this.inputAux.indexOf( conjEssere[5] ) !== -1 ) &&
+							 ( ( conjEssereRifl[3].indexOf( this.inputAux ) !== -1 || conjEssereRifl[4].indexOf( this.inputAux ) !== -1 || conjEssereRifl[5].indexOf( this.inputAux ) !== -1 ) &&
                                 ( partLastLetter === 'i' || partLastLetter === 'e' ) ) ) { // the check for plural verb form
                             this.verbPartValid = true;
                             this.$refs.vbpart.blur();
@@ -159,7 +158,7 @@ var verbApp = new Vue({
             // if ( this.verbAuxValid === true && this.verbPartValid !== true ) {
             	// // Check if the input aux is avere or essere in singular form
              //    if ( ( this.currentVerb.verbAux === 'avere' ) ||
-             //        this.inputAux.indexOf( conjEssere[0] ) !== -1 || this.inputAux.indexOf( conjEssere[1] ) !== -1 || this.inputAux.indexOf( conjEssere[2] ) !== -1 ) {
+             //        conjEssereRifl[0].indexOf( this.inputAux ) !== -1 || conjEssereRifl[1].indexOf( this.inputAux ) !== -1 || conjEssereRifl[2].indexOf( this.inputAux ) !== -1 ) {
              //        this.inputPart = this.currentVerb.verbPart;
 			// 	} else { // Input aux is essere in plural form
              //        this.inputAux = this.currentVerb.verbPart.substr( 0, this.currentVerb.verbPart.length - 1 ) + 'i';
