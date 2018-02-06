@@ -316,7 +316,7 @@ var verbs = [
 	{
 		verbInf: 'cancellare',
 		verbAux: 'avere',
-		verbPart: 'cancelato'
+		verbPart: 'cancellato'
 	},
 	{
 		verbInf: 'cantare',
