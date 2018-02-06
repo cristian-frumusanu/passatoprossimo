@@ -36,7 +36,7 @@
 					<button class="c-form__button  c-form__resolve  js-resolve" v-on:click="resolve">Risolvere</button>
 					<button class="c-form__button  c-form__next  js-next" v-on:click="setNewVerb">Un altro verbo</button>
 				</div><!-- .c-form__wrapper-submit -->
-				<div class="c-form__translations" v-bind:class="{'is--visible': translateEnabled}" v-if="translateEnabled">
+				<div class="c-form__translations" v-if="translateEnabled">
 					<div class="c-translation" v-if="verbEnglish !== null">
 						<span class="c-translation__flag"><span class="lang_code">EN</span></span>
 						<span class="c-translation__text">{{verbEnglish}}</span>

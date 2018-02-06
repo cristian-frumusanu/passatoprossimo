@@ -2755,9 +2755,7 @@ th {
   background-color: #6ed3cf; }
 
 .c-form__translations {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -2769,8 +2767,10 @@ th {
       flex-wrap: wrap;
   margin-top: 20px;
   opacity: 0; }
-  .c-form__translations.is--visible {
-    opacity: 1; }
+  .is--loaded .c-form__translations {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .c-form__translations .c-translation {
     font-size: 14px;
     margin: 10px;

@@ -256,7 +256,7 @@ body {
 .c-form__next    { background-color: #6ed3cf; }
 
 .c-form__translations {
-	display: flex;
+	display: none;
 	justify-content: space-between;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -265,7 +265,7 @@ body {
 
 	opacity: 0;
 
-	&.is--visible { opacity: 1;	}
+	.is--loaded & { display: flex;	}
 
 	.c-translation {
 		font-size: 14px;
