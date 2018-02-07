@@ -154,24 +154,40 @@ var verbApp = new Vue({
         resolve: function() {
             console.log( 'resolve' );
 
-            // // Check if the aux is valid but the participle no
-            // if ( this.verbAuxValid === true && this.verbPartValid !== true ) {
-            	// // Check if the input aux is avere or essere in singular form
-             //    if ( ( this.currentVerb.verbAux === 'avere' ) ||
-             //        conjEssereRifl[0].indexOf( this.inputAux ) !== -1 || conjEssereRifl[1].indexOf( this.inputAux ) !== -1 || conjEssereRifl[2].indexOf( this.inputAux ) !== -1 ) {
-             //        this.inputPart = this.currentVerb.verbPart;
-			// 	} else { // Input aux is essere in plural form
-             //        this.inputAux = this.currentVerb.verbPart.substr( 0, this.currentVerb.verbPart.length - 1 ) + 'i';
-			// 	}
-            //
-			// } else if ( this.verbAuxValid !== true && this.verbPartValid === true ) {
-            //
-			// } else {
-            //
-			// }
+            // Check if the aux is valid but the participle no
+            if ( this.verbAuxValid === true && this.verbPartValid !== true ) {
+            	// Check if the input aux is avere or essere in singular form
+                if ( ( this.currentVerb.verbAux === 'avere' ) ||
+                    conjEssereRifl[0].indexOf( this.inputAux ) !== -1 || conjEssereRifl[1].indexOf( this.inputAux ) !== -1 || conjEssereRifl[2].indexOf( this.inputAux ) !== -1 ) {
+                    this.inputPart = this.currentVerb.verbPart;
+				} else { // Input aux is essere in plural form
+                    this.inputPart = this.currentVerb.verbPart.substr( 0, this.currentVerb.verbPart.length - 1 ) + 'i';
+				}
 
-            this.verbAuxValid !== true ? this.inputAux = this.currentVerb.verbAux : '';
-            this.verbPartValid !== true ? this.inputPart = this.currentVerb.verbPart : '';
+			} else if ( this.verbAuxValid !== true && this.verbPartValid === true ) {
+                if ( this.currentVerb.verbAux === 'avere' ) {
+                    this.inputAux = conjAvere[0];
+                } else {
+                    var lastLetter = this.inputPart.toLowerCase().slice(-1);
+
+                    if ( lastLetter === 'o' || lastLetter === 'a' ) {
+                        if ( this.currentVerb.isReflexive ) {
+                            this.inputAux = conjEssereRifl[0];
+                        } else {
+                            this.inputAux = conjEssere[0];
+                        }
+                    } else {
+                        if ( this.currentVerb.isReflexive ) {
+                            this.inputAux = conjEssereRifl[3];
+                        } else {
+                            this.inputAux = conjEssere[3];
+                        }
+                    }
+                }
+			} else {
+                this.verbAuxValid !== true ? this.inputAux = this.currentVerb.verbAux : '';
+                this.verbPartValid !== true ? this.inputPart = this.currentVerb.verbPart : '';
+			}
 
             this.verbAuxValid = true;
             this.verbPartValid = true;
