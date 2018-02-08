@@ -2664,11 +2664,15 @@ th {
           transform: translateY(-50%);
   color: #6de85a;
   font-size: 20px;
-  opacity: 0; }
+  opacity: 0;
+  pointer-events: none; }
   .verb-status.wrong {
     color: #b20000; }
   .is--loaded .verb-status {
     opacity: 1; }
+  .is--ie .verb-status {
+    right: auto;
+    left: 20px; }
 
 .verb-label {
   position: absolute;
@@ -2707,23 +2711,29 @@ th {
   outline: 0;
   font-size: 22px;
   text-align: center; }
+  .is--ie .verb-input {
+    height: 45px; }
   .verb-input:active, .verb-input:focus {
     border: 3px solid #000; }
   .verb-input::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     font-size: 16px;
+    line-height: 22px;
     font-style: italic; }
   .verb-input::-moz-placeholder {
     /* Firefox 19+ */
     font-size: 16px;
+    line-height: 22px;
     font-style: italic; }
   .verb-input:-ms-input-placeholder {
     /* IE 10+ */
     font-size: 16px;
+    line-height: 22px;
     font-style: italic; }
   .verb-input:-moz-placeholder {
     /* Firefox 18- */
     font-size: 16px;
+    line-height: 22px;
     font-style: italic; }
 
 .c-form__button {
@@ -2743,7 +2753,7 @@ th {
   @media not screen and (max-width: 900px) {
     .c-form__button {
       margin: 0 10px;
-      font-size: 30px; } }
+      font-size: 22px; } }
 
 .c-form__submit {
   background-color: #e62739; }
