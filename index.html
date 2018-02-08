@@ -1,72 +1,72 @@
 <!doctype html>
 <html>
+	<head>
+		<title>Controllore del passato prossimo</title>
+		<link rel="stylesheet" href="assets/css/style.css">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=11">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
 
-<head>
-	<title>Controllore del passato prossimo</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/style.css">
-</head>
+	<body>
+		<div class="wrapper">
+			<div class="c-card">
+				<h1 class="c-card__title">Controllore del passato prossimo</h1>
+				<form class="c-form  js-form" autocomplete="off" v-on:submit.prevent="onSubmit">
+					<span class="verb-helper">per il verbo...</span>
+					<span class="verb js-verb" v-bind:class="{'is--visible': currentVerb.verbInf}">
+						<span>{{currentVerb.verbInf}}</span>
+						<button class="button-translate" v-bind:class="{'is--enabled': translateEnabled}" @click="toggleTranslate"><i class="fa fa-language"></i></button>
+					</span>
+					<div class="c-form__wrapper-inputs">
+						<div class="c-form__input-wrapper">
+							<label class="verb-label" for="vbaux">Il verbo ausiliare</label>
+							<input type="text" class="verb-input  js-vb-aux" name="vbaux" placeholder="Scrivi qui il verbo ausiliare" ref="vbaux" v-model="inputAux" @keyup="waitForTyping" />
+							<span class="verb-status" v-if="verbAuxValid === true"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+							<span class="verb-status  wrong" v-if="verbAuxValid === false"><i class="fa fa-exclamation" aria-hidden="true"></i></span>
+						</div><!-- .c-form__input-wrapper -->
+						<div class="c-form__input-wrapper">
+							<label class="verb-label" for="vbpart">Il participio passato</label>
+							<input type="text" class="verb-input  js-vb-passato" name="vbpart" placeholder="Scrivi qui il participio passato" ref="vbpart" v-model="inputPart" @keyup="waitForTyping" />
+							<span class="verb-status" v-if="verbPartValid === true"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+							<span class="verb-status  wrong" v-if="verbPartValid === false"><i class="fa fa-exclamation" aria-hidden="true"></i></span>
+						</div><!-- .c-form__input-wrapper -->
+					</div><!-- .c-form__wrapper-inputs -->
+					<div class="c-form__wrapper-submit">
+						<!--button class="c-form__button  c-form__submit  js-submit" v-on:click="checkParticiple">Verificare</button-->
+						<button class="c-form__button  c-form__resolve  js-resolve" v-on:click="resolve">Risolvere</button>
+						<button class="c-form__button  c-form__next  js-next" v-on:click="setNewVerb">Un altro verbo</button>
+					</div><!-- .c-form__wrapper-submit -->
+					<div class="c-form__translations" v-if="translateEnabled">
+						<div class="c-translation" v-if="verbEnglish !== null">
+							<span class="c-translation__flag"><span class="lang_code">EN</span></span>
+							<span class="c-translation__text">{{verbEnglish}}</span>
+						</div>
+						<div class="c-translation" v-if="verbFrench !== null">
+							<span class="c-translation__flag"><span class="lang_code">FR</span></span>
+							<span class="c-translation__text">{{verbFrench}}</span>
+						</div>
+						<div class="c-translation" v-if="verbSpanish !== null">
+							<span class="c-translation__flag"><span class="lang_code">SP</span></span>
+							<span class="c-translation__text">{{verbSpanish}}</span>
+						</div>
+						<div class="c-translation" v-if="verbPortughese !== null">
+							<span class="c-translation__flag"><span class="lang_code">PT</span></span>
+							<span class="c-translation__text">{{verbPortughese}}</span>
+						</div>
+						<div class="c-translation" v-if="verbPortughese !== null">
+							<span class="c-translation__flag"><span class="lang_code">RU</span></span>
+							<span class="c-translation__text">{{verbRussian}}</span>
+						</div>
+						<div class="c-translation__credit">Translation powered by <a href="https://translate.google.com">Google Translate</a></div>
+					</div>
+				</form><!-- .c-form -->
+			</div><!-- .c-card -->
+			<div class="contact-text">Problems/suggestions: <a href="mailto:contact@individual.ro">contact@individual.ro</a></div>
+		</div><!-- .wrapper -->
 
-<body>
-	<div class="wrapper">
-		<div class="c-card">
-			<h1 class="c-card__title">Controllore del passato prossimo</h1>
-			<form class="c-form  js-form" autocomplete="off" v-on:submit.prevent="onSubmit">
-				<span class="verb-helper">per il verbo...</span>
-				<span class="verb js-verb" v-bind:class="{'is--visible': currentVerb.verbInf}">
-					<span>{{currentVerb.verbInf}}</span>
-					<button class="button-translate" v-bind:class="{'is--enabled': translateEnabled}" @click="toggleTranslate"><i class="fa fa-language"></i></button>
-				</span>
-				<div class="c-form__wrapper-inputs">
-					<div class="c-form__input-wrapper">
-						<label class="verb-label" for="vbaux">Il verbo ausiliare</label>
-						<input type="text" class="verb-input  js-vb-aux" name="vbaux" placeholder="Scrivi qui il verbo ausiliare" ref="vbaux" v-model="inputAux" @keyup="waitForTyping" />
-						<span class="verb-status" v-if="verbAuxValid === true"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
-						<span class="verb-status  wrong" v-if="verbAuxValid === false"><i class="fa fa-exclamation" aria-hidden="true"></i></span>
-					</div><!-- .c-form__input-wrapper -->
-					<div class="c-form__input-wrapper">
-						<label class="verb-label" for="vbpart">Il participio passato</label>
-						<input type="text" class="verb-input  js-vb-passato" name="vbpart" placeholder="Scrivi qui il participio passato" ref="vbpart" v-model="inputPart" @keyup="waitForTyping" />
-						<span class="verb-status" v-if="verbPartValid === true"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
-						<span class="verb-status  wrong" v-if="verbPartValid === false"><i class="fa fa-exclamation" aria-hidden="true"></i></span>
-					</div><!-- .c-form__input-wrapper -->
-				</div><!-- .c-form__wrapper-inputs -->
-				<div class="c-form__wrapper-submit">
-					<!--button class="c-form__button  c-form__submit  js-submit" v-on:click="checkParticiple">Verificare</button-->
-					<button class="c-form__button  c-form__resolve  js-resolve" v-on:click="resolve">Risolvere</button>
-					<button class="c-form__button  c-form__next  js-next" v-on:click="setNewVerb">Un altro verbo</button>
-				</div><!-- .c-form__wrapper-submit -->
-				<div class="c-form__translations" v-if="translateEnabled">
-					<div class="c-translation" v-if="verbEnglish !== null">
-						<span class="c-translation__flag"><span class="lang_code">EN</span></span>
-						<span class="c-translation__text">{{verbEnglish}}</span>
-					</div>
-					<div class="c-translation" v-if="verbFrench !== null">
-						<span class="c-translation__flag"><span class="lang_code">FR</span></span>
-						<span class="c-translation__text">{{verbFrench}}</span>
-					</div>
-					<div class="c-translation" v-if="verbSpanish !== null">
-						<span class="c-translation__flag"><span class="lang_code">SP</span></span>
-						<span class="c-translation__text">{{verbSpanish}}</span>
-					</div>
-					<div class="c-translation" v-if="verbPortughese !== null">
-						<span class="c-translation__flag"><span class="lang_code">PT</span></span>
-						<span class="c-translation__text">{{verbPortughese}}</span>
-					</div>
-					<div class="c-translation" v-if="verbPortughese !== null">
-						<span class="c-translation__flag"><span class="lang_code">RU</span></span>
-						<span class="c-translation__text">{{verbRussian}}</span>
-					</div>
-					<div class="c-translation__credit">Translation powered by <a href="https://translate.google.com">Google Translate</a></div>
-				</div>
-			</form><!-- .c-form -->
-		</div><!-- .c-card -->
-		<div class="contact-text">Problems/suggestions: <a href="mailto:contact@individual.ro">contact@individual.ro</a></div>
-	</div><!-- .wrapper -->
-</body>
-
-<script src="assets/js/vue.js"></script>
-<script src="assets/js/verbs.js"></script>
-<script src="assets/js/main.js"></script>
-
+		<script src="assets/js/vue.min.js"></script>
+		<script src="assets/js/verbs.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
 </html>
