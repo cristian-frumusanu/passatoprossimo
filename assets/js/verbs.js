@@ -4,18 +4,6 @@ var verbs = [
 		verbAux: 'avere',
 		verbPart: 'acceso'
 	},
-    {
-        verbInf: 'accorgersi',
-        verbAux: 'essere',
-        verbPart: 'accorto',
-		isReflexive: true
-    },
-    {
-        verbInf: 'addormentarsi',
-        verbAux: 'essere',
-        verbPart: 'addormentato',
-		isReflexive: true
-    },
 	{
 		verbInf: 'aprire',
 		verbAux: 'avere',
@@ -77,12 +65,6 @@ var verbs = [
 		verbPart: 'messo'
 	},
 	{
-		verbInf: 'mettersi',
-		verbAux: 'essere',
-		verbPart: 'messo',
-		isReflexive: true
-	},
-	{
 		verbInf: 'morire',
 		verbAux: 'essere',
 		verbPart: 'morto'
@@ -98,12 +80,6 @@ var verbs = [
 		verbPart: 'perso'
 	},
 	{
-		verbInf: 'pettinarsi',
-		verbAux: 'essere',
-		verbPart: 'pettinato',
-		isReflexive: true
-	},
-	{
 		verbInf: 'piacere',
 		verbAux: 'essere',
 		verbPart: 'piaciuto'
@@ -112,12 +88,6 @@ var verbs = [
 		verbInf: 'prendere',
 		verbAux: 'avere',
 		verbPart: 'preso'
-	},
-	{
-		verbInf: 'radersi',
-		verbAux: 'essere',
-		verbPart: 'raso',
-		isReflexive: true
 	},
 	{
 		verbInf: 'ridere',
@@ -204,22 +174,10 @@ var verbs = [
         verbAux: 'avere',
         verbPart: 'alzato'
     },
-    {
-        verbInf: 'alzarsi',
-        verbAux: 'essere',
-        verbPart: 'alzato',
-		isReflexive: true
-    },
 	{
 		verbInf: 'andare',
 		verbAux: 'essere',
 		verbPart: 'andato'
-	},
-	{
-		verbInf: 'annoiarsi',
-		verbAux: 'essere',
-		verbPart: 'annoiato',
-		isReflexive: true
 	},
 	{
 		verbInf: 'appartenere',
@@ -235,12 +193,6 @@ var verbs = [
 		verbInf: 'ardere',
 		verbAux: 'essere',
 		verbPart: 'arso'
-	},
-	{
-		verbInf: 'arrabbiarsi',
-		verbAux: 'essere',
-		verbPart: 'arrabiato',
-		isReflexive: true
 	},
 	{
 		verbInf: 'arrivare',
@@ -298,12 +250,6 @@ var verbs = [
 		verbPart: 'caduto'
 	},
 	{
-		verbInf: 'calmarsi',
-		verbAux: 'essere',
-		verbPart: 'calmato',
-		isReflexive: true
-	},
-	{
 		verbInf: 'cambiare',
 		verbAux: 'avere',
 		verbPart: 'cambiato'
@@ -342,12 +288,6 @@ var verbs = [
 		verbInf: 'chiamare',
 		verbAux: 'avere',
 		verbPart: 'chiamato'
-	},
-	{
-		verbInf: 'chiamarsi',
-		verbAux: 'essere',
-		verbPart: 'chiamato',
-		isReflexive: true
 	},
 	{
 		verbInf: 'cogliere',
@@ -469,12 +409,6 @@ var verbs = [
 		verbAux: 'avere',
 		verbPart: 'distrutto'
 	},
-    {
-        verbInf: 'divertersi',
-        verbAux: 'essere',
-        verbPart: 'divertito',
-		isReflexive: true
-    },
 	{
 		verbInf: 'divenire',
 		verbAux: 'essere',
@@ -519,12 +453,6 @@ var verbs = [
 		verbInf: 'facilitare',
 		verbAux: 'avere',
 		verbPart: 'facilitato'
-	},
-	{
-		verbInf: 'fermarsi',
-		verbAux: 'essere',
-		verbPart: 'fermato',
-		isReflexive: true
 	},
 	{
 		verbInf: 'finire',
@@ -646,12 +574,6 @@ var verbs = [
 		verbAux: 'avere',
 		verbPart: 'informato'
 	},
-    {
-        verbInf: 'innamorarsi',
-        verbAux: 'essere',
-        verbPart: 'innamorato',
-		isReflexive: true
-    },
 	{
 		verbInf: 'insistere',
 		verbAux: 'avere',
@@ -673,21 +595,9 @@ var verbs = [
 		verbPart: 'lasciato'
 	},
 	{
-		verbInf: 'laurearsi',
-		verbAux: 'essere',
-		verbPart: 'laureato',
-		isReflexive: true
-	},
-	{
 		verbInf: 'lavare',
 		verbAux: 'avere',
 		verbPart: 'lavato'
-	},
-	{
-		verbInf: 'lavarsi',
-		verbAux: 'essere',
-		verbPart: 'lavato',
-		isReflexive: true
 	},
 	{
 		verbInf: 'lavorare',
@@ -985,12 +895,6 @@ var verbs = [
 		verbPart: 'sbagliato'
 	},
 	{
-		verbInf: 'sbagliarsi',
-		verbAux: 'essere',
-		verbPart: 'sbagliato',
-		isReflexive: true
-	},
-	{
 		verbInf: 'scaldare',
 		verbAux: 'avere',
 		verbPart: 'scaldato'
@@ -1010,12 +914,6 @@ var verbs = [
 		verbAux: 'avere',
 		verbPart: 'seduto'
 	},
-    {
-        verbInf: 'sedersi',
-        verbAux: 'essere',
-        verbPart: 'seduto',
-		isReflexive: true
-    },
 	{
 		verbInf: 'seguire',
 		verbAux: 'avere',
@@ -1025,12 +923,6 @@ var verbs = [
 		verbInf: 'sentire',
 		verbAux: 'avere',
 		verbPart: 'sentito'
-	},
-	{
-		verbInf: 'sentirsi',
-		verbAux: 'essere',
-		verbPart: 'sentito',
-		isReflexive: true
 	},
 	{
 		verbInf: 'separare',
@@ -1058,12 +950,6 @@ var verbs = [
 		verbPart: 'sorpreso'
 	},
 	{
-		verbInf: 'sorprendersi',
-		verbAux: 'essere',
-		verbPart: 'sorpreso',
-		isReflexive: true
-	},
-	{
 		verbInf: 'spedire',
 		verbAux: 'avere',
 		verbPart: 'spedito'
@@ -1089,12 +975,6 @@ var verbs = [
 		verbPart: 'sposato'
 	},
 	{
-		verbInf: 'sposarsi',
-		verbAux: 'essere',
-		verbPart: 'sposato',
-		isReflexive: true
-	},
-	{
 		verbInf: 'studiare',
 		verbAux: 'avere',
 		verbPart: 'studiato'
@@ -1110,12 +990,6 @@ var verbs = [
 		verbPart: 'suonato'
 	},
 	{
-		verbInf: 'svegliarsi',
-		verbAux: 'essere',
-		verbPart: 'svegliato',
-		isReflexive: true
-	},
-	{
 		verbInf: 'tagliare',
 		verbAux: 'avere',
 		verbPart: 'tagliato'
@@ -1124,12 +998,6 @@ var verbs = [
 		verbInf: 'temere',
 		verbAux: 'avere',
 		verbPart: 'temuto'
-	},
-	{
-		verbInf: 'temersi',
-		verbAux: 'essere',
-		verbPart: 'temuto',
-		isReflexive: true
 	},
 	{
 		verbInf: 'tenere',
@@ -1172,21 +1040,9 @@ var verbs = [
 		verbPart: 'trovato'
 	},
 	{
-		verbInf: 'turbarsi',
-		verbAux: 'essere',
-		verbPart: 'turbato',
-		isReflexive: true
-	},
-	{
 		verbInf: 'uccidere',
 		verbAux: 'avere',
 		verbPart: 'ucciso'
-	},
-	{
-		verbInf: 'umiliarsi',
-		verbAux: 'essere',
-		verbPart: 'umiliato',
-		isReflexive: true
 	},
 	{
 		verbInf: 'ungere',
@@ -1229,12 +1085,6 @@ var verbs = [
 		verbPart: 'versato'
 	},
 	{
-		verbInf: 'vestirsi',
-		verbAux: 'essere',
-		verbPart: 'vestito',
-		isReflexive: true
-	},
-	{
 		verbInf: 'vietare',
 		verbAux: 'avere',
 		verbPart: 'vietato'
@@ -1270,3 +1120,158 @@ var verbs = [
 		verbPart: 'votato'
 	},
 ];
+
+var verbsReflexive = [
+    {
+        verbInf: 'accorgersi',
+        verbAux: 'essere',
+        verbPart: 'accorto',
+        isReflexive: true
+    },
+    {
+        verbInf: 'addormentarsi',
+        verbAux: 'essere',
+        verbPart: 'addormentato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'mettersi',
+        verbAux: 'essere',
+        verbPart: 'messo',
+        isReflexive: true
+    },
+    {
+        verbInf: 'pettinarsi',
+        verbAux: 'essere',
+        verbPart: 'pettinato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'radersi',
+        verbAux: 'essere',
+        verbPart: 'raso',
+        isReflexive: true
+    },
+    {
+        verbInf: 'alzarsi',
+        verbAux: 'essere',
+        verbPart: 'alzato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'annoiarsi',
+        verbAux: 'essere',
+        verbPart: 'annoiato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'arrabbiarsi',
+        verbAux: 'essere',
+        verbPart: 'arrabiato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'calmarsi',
+        verbAux: 'essere',
+        verbPart: 'calmato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'chiamarsi',
+        verbAux: 'essere',
+        verbPart: 'chiamato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'divertersi',
+        verbAux: 'essere',
+        verbPart: 'divertito',
+        isReflexive: true
+    },
+    {
+        verbInf: 'fermarsi',
+        verbAux: 'essere',
+        verbPart: 'fermato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'innamorarsi',
+        verbAux: 'essere',
+        verbPart: 'innamorato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'laurearsi',
+        verbAux: 'essere',
+        verbPart: 'laureato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'lavarsi',
+        verbAux: 'essere',
+        verbPart: 'lavato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'sbagliarsi',
+        verbAux: 'essere',
+        verbPart: 'sbagliato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'sedersi',
+        verbAux: 'essere',
+        verbPart: 'seduto',
+        isReflexive: true
+    },
+    {
+        verbInf: 'sentirsi',
+        verbAux: 'essere',
+        verbPart: 'sentito',
+        isReflexive: true
+    },
+    {
+        verbInf: 'sorprendersi',
+        verbAux: 'essere',
+        verbPart: 'sorpreso',
+        isReflexive: true
+    },
+    {
+        verbInf: 'sposarsi',
+        verbAux: 'essere',
+        verbPart: 'sposato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'svegliarsi',
+        verbAux: 'essere',
+        verbPart: 'svegliato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'temersi',
+        verbAux: 'essere',
+        verbPart: 'temuto',
+        isReflexive: true
+    },
+    {
+        verbInf: 'turbarsi',
+        verbAux: 'essere',
+        verbPart: 'turbato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'umiliarsi',
+        verbAux: 'essere',
+        verbPart: 'umiliato',
+        isReflexive: true
+    },
+    {
+        verbInf: 'vestirsi',
+        verbAux: 'essere',
+        verbPart: 'vestito',
+        isReflexive: true
+    }
+]
+
+verbs = verbs.concat( verbsReflexive );
