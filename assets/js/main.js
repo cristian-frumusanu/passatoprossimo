@@ -1,5 +1,7 @@
 "use strict";
 
+window.globalDebug = false;
+
 var conjAvere = [
     'ho',
     'hai',
@@ -58,7 +60,7 @@ var verbApp = new Vue({
             }.bind( this ), 500 );
         },
         checkAux: function() {
-            console.log( 'checkAux' );
+            if ( window.globalDebug ) { console.log('checkAux'); }
 
             // Check if the aux input is empty
             if( ! this.inputAux ) {
@@ -73,7 +75,7 @@ var verbApp = new Vue({
             } else
 			// Check if the aux is essere and in non-reflexive form
 			if ( ( conjEssere.indexOf( this.inputAux.toLowerCase() ) >= 0 &&
-                    this.currentVerb.verbAux.indexOf( 'essere' ) !== -1 || this.inputAux === 'essere' ) &&
+                 this.currentVerb.verbAux.indexOf( 'essere' ) !== -1 || this.inputAux === 'essere' ) &&
 				! this.currentVerb.isReflexive ) {
                 this.verbAuxValid = true;
                 this.$refs.vbpart.focus();
@@ -89,7 +91,7 @@ var verbApp = new Vue({
             }
         },
         checkParticiple: function() {
-            console.log( 'checkParticiple' );
+            if ( window.globalDebug ) { console.log( 'checkParticiple' ); }
 
             // If the participle has not been filled,
 			// set the valid variable to a value that is
@@ -134,11 +136,11 @@ var verbApp = new Vue({
             }
         },
         getVerb: function() {
-            console.log( 'getVerb' );
+            if ( window.globalDebug ) { console.log( 'getVerb' ); }
             return verbs[Math.floor( Math.random() * verbs.length )];
         },
         setNewVerb: function() {
-            console.log( 'setNewVerb' );
+            if ( window.globalDebug ) { console.log( 'setNewVerb' ); }
 
             this.currentVerb = this.getVerb();
             this.inputPart = null;
@@ -152,7 +154,7 @@ var verbApp = new Vue({
             }
         },
         resolve: function() {
-            console.log( 'resolve' );
+            if ( window.globalDebug ) { console.log( 'resolve' ); }
 
             // Check if the aux is valid but the participle no
             if ( this.verbAuxValid === true && this.verbPartValid !== true ) {
@@ -185,8 +187,17 @@ var verbApp = new Vue({
                     }
                 }
 			} else {
-                this.verbAuxValid !== true ? this.inputAux = this.currentVerb.verbAux : '';
-                this.verbPartValid !== true ? this.inputPart = this.currentVerb.verbPart : '';
+                if( this.currentVerb.verbAux === 'avere' ) {
+                    this.inputAux = conjAvere[0];
+                } else if( this.currentVerb.verbAux === 'essere' && this.currentVerb.isReflexive ) {
+                    this.inputAux = conjEssereRifl[0];
+                } else if( this.currentVerb.verbAux === 'essere' && !this.currentVerb.isReflexive ) {
+                    this.inputAux = conjEssere[0];
+                } else {
+                    this.inputAux = this.currentVerb.verbAux;
+                }
+
+                this.inputPart = this.currentVerb.verbPart;
 			}
 
             this.verbAuxValid = true;
@@ -198,51 +209,51 @@ var verbApp = new Vue({
         doTranslate: function() {
             get( 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=it&tl=en&dt=t&q=' + this.currentVerb.verbInf )
                 .then( function( data ){
-                    console.log( data );
+                    if ( window.globalDebug ) { console.log( data ); }
                     verbApp.verbEnglish = JSON.parse( data )[0][0][0];
                 })
                 .catch( function( err ){
-                    console.log( err );
+                    if ( window.globalDebug ) { console.log( err ); }
                     verbApp.verbEnglish = null;
                 });
 
             get( 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=it&tl=fr&dt=t&q=' + this.currentVerb.verbInf )
                 .then( function( data ){
-                    console.log( data );
+                    if ( window.globalDebug ) { console.log( data ); }
                     verbApp.verbFrench = JSON.parse( data )[0][0][0];
                 })
                 .catch( function( err ){
-                    console.log( err );
+                    if ( window.globalDebug ) { console.log( err ); }
                     verbApp.verbFrench = null;
                 });
 
             get( 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=it&tl=es&dt=t&q=' + this.currentVerb.verbInf )
                 .then( function( data ){
-                    console.log( data );
+                    if ( window.globalDebug ) { console.log( data ); }
                     verbApp.verbSpanish = JSON.parse( data )[0][0][0];
                 })
                 .catch( function( err ){
-                    console.log( err );
+                    if ( window.globalDebug ) { console.log( err ); }
                     verbApp.verbSpanish = null;
                 });
 
             get( 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=it&tl=pt&dt=t&q=' + this.currentVerb.verbInf )
                 .then( function( data ){
-                    console.log( data );
+                    if ( window.globalDebug ) { console.log( data ); }
                     verbApp.verbPortughese = JSON.parse( data )[0][0][0];
                 })
                 .catch( function( err ){
-                    console.log( err );
+                    if ( window.globalDebug ) { console.log( err ); }
                     verbApp.verbPortughese = null;
                 });
 
             get( 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=it&tl=ru&dt=t&q=' + this.currentVerb.verbInf )
                 .then( function( data ){
-                    console.log( data );
+                    if ( window.globalDebug ) { console.log( data ); }
                     verbApp.verbRussian = JSON.parse( data )[0][0][0];
                 })
                 .catch( function( err ){
-                    console.log( err );
+                    if ( window.globalDebug ) { console.log( err ); }
                     verbApp.verbRussian = null;
                 });
         },

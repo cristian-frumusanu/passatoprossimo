@@ -2533,10 +2533,6 @@ th {
   overflow: visible;
   clip: auto; }
 
-@media not screen and (max-width: 900px) {
-  body {
-    background-color: #94c9ff; } }
-
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2571,11 +2567,6 @@ th {
   padding: 20px;
   text-align: center;
   background-color: #fff; }
-  @media not screen and (max-width: 900px) {
-    .c-card {
-      border-radius: 20px;
-      -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-              box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); } }
 
 .c-card__title {
   margin-top: 0;
@@ -2644,17 +2635,25 @@ th {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  margin-left: 10px;
-  padding: 20px;
+  margin-left: 15px;
+  padding: 10px 15px;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: transparent;
-  border: 0; }
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px; }
+  .button-translate:hover, .button-translate:focus, .button-translate:active {
+    outline: none; }
   .button-translate:not(.is--enabled) {
-    opacity: .5; }
-  .button-translate.is--enabled {
-    color: green; }
+    background-color: #fff;
+    color: #000;
+    border-color: #f1f1f1; }
+  .button-translate:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000; }
 
 .verb-status {
   position: absolute;
