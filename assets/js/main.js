@@ -65,29 +65,32 @@ var verbApp = new Vue({
             // Check if the aux input is empty
             if( ! this.inputAux ) {
                 this.verbAuxValid = 'meh';
-            } else
-			// Check if the aux is avere
-			if ( conjAvere.indexOf( this.inputAux.toLowerCase() ) >= 0 &&
-                this.currentVerb.verbAux.indexOf( 'avere' ) !== -1 ||
-                this.inputAux === 'avere' ) {
-                this.verbAuxValid = true;
-                this.$refs.vbpart.focus();
-            } else
-			// Check if the aux is essere and in non-reflexive form
-			if ( ( conjEssere.indexOf( this.inputAux.toLowerCase() ) >= 0 &&
-                 this.currentVerb.verbAux.indexOf( 'essere' ) !== -1 || this.inputAux.toLowerCase() === 'essere' ) &&
-				! this.currentVerb.isReflexive ) {
-                this.verbAuxValid = true;
-                this.$refs.vbpart.focus();
-            } else
-			// Check if the aux is essere in reflexive form
-			if( conjEssereRifl.indexOf( this.inputAux.toLowerCase() ) >= 0 &&
-                this.currentVerb.isReflexive || this.inputAux.toLowerCase() === 'essere' ) {
-                this.verbAuxValid = true;
-                this.$refs.vbpart.focus();
             } else {
-				// The aux is not valid
-                this.verbAuxValid = false;
+                this.inputAux = this.inputAux.replace(/\s+/g, '');
+
+                // Check if the aux is avere
+                if ( conjAvere.indexOf( this.inputAux.toLowerCase() ) >= 0 &&
+                    this.currentVerb.verbAux.indexOf( 'avere' ) !== -1 ||
+                    this.inputAux === 'avere' ) {
+                    this.verbAuxValid = true;
+                    this.$refs.vbpart.focus();
+                } else
+                // Check if the aux is essere and in non-reflexive form
+                if ( ( conjEssere.indexOf( this.inputAux.toLowerCase() ) >= 0 &&
+                        this.currentVerb.verbAux.indexOf( 'essere' ) !== -1 || this.inputAux.toLowerCase() === 'essere' ) &&
+                    ! this.currentVerb.isReflexive ) {
+                    this.verbAuxValid = true;
+                    this.$refs.vbpart.focus();
+                } else
+                // Check if the aux is essere in reflexive form
+                if( conjEssereRifl.indexOf( this.inputAux.toLowerCase() ) >= 0 &&
+                    this.currentVerb.isReflexive || this.inputAux.toLowerCase() === 'essere' ) {
+                    this.verbAuxValid = true;
+                    this.$refs.vbpart.focus();
+                } else {
+                    // The aux is not valid
+                    this.verbAuxValid = false;
+                }
             }
         },
         checkParticiple: function() {
@@ -99,6 +102,8 @@ var verbApp = new Vue({
             if ( ! this.inputPart ) {
                 this.verbPartValid = 'meh';
             } else {
+                this.inputPart = this.inputPart.replace(/\s+/g, '');
+
                 var currentInputPart = this.inputPart.toLowerCase();
 
                 // If the aux is avere
@@ -307,6 +312,18 @@ function getIEVersion() {
 
     else
         return 0; //It is not IE
+}
+
+if ( 'serviceWorker' in navigator ) {
+    window.addEventListener( 'load', function() {
+        navigator.serviceWorker.register( 'sw.js' ).then( function( registration ) {
+            // Registration was successful
+            console.log( 'ServiceWorker registration successful with scope: ', registration.scope );
+        }, function( err ) {
+            // registration failed :(
+            console.log( 'ServiceWorker registration failed: ', err );
+        });
+    });
 }
 
 // Promise Polyfill - https://github.com/stefanpenner/es6-promise
