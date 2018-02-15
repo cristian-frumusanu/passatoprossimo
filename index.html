@@ -20,7 +20,7 @@
 					<span class="verb-helper">per il verbo...</span>
 					<span class="verb js-verb" v-bind:class="{'is--visible': currentVerb.verbInf}">
 						<span>{{currentVerb.verbInf}}</span>
-						<button class="button-translate" v-bind:class="{'is--enabled': translateEnabled}" @click="toggleTranslate"><i class="fa fa-language"></i></button>
+						<button class="button-translate" v-if="isOnline" v-bind:class="{'is--enabled': translateEnabled}" @click="toggleTranslate"><i class="fa fa-language"></i></button>
 					</span>
 					<div class="c-form__wrapper-inputs">
 						<div class="c-form__input-wrapper">

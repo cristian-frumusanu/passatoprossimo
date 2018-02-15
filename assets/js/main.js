@@ -47,7 +47,8 @@ var verbApp = new Vue({
         verbFrench: null,
         verbSpanish: null,
         verbPortughese: null,
-        verbRussian: null
+        verbRussian: null,
+        isOnline: false
     },
     methods: {
         // Listen for keystroke events
@@ -66,7 +67,7 @@ var verbApp = new Vue({
             if( ! this.inputAux ) {
                 this.verbAuxValid = 'meh';
             } else {
-                this.inputAux = this.inputAux.replace(/\s+/g, '');
+                this.inputAux = this.inputAux.replace(/\s*$/,"");
 
                 // Check if the aux is avere
                 if ( conjAvere.indexOf( this.inputAux.toLowerCase() ) >= 0 &&
@@ -212,6 +213,11 @@ var verbApp = new Vue({
             this.translateEnabled = !this.translateEnabled;
         },
         doTranslate: function() {
+            if( !this.isOnline ) {
+                this.translateEnabled = false;
+                return;
+            }
+
             get( 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=it&tl=en&dt=t&q=' + this.currentVerb.verbInf )
                 .then( function( data ){
                     if ( window.globalDebug ) { console.log( data ); }
@@ -265,11 +271,14 @@ var verbApp = new Vue({
         onSubmit: function() {
             // do nothing
             // cathes the form default action
+        },
+        updateOnlineStatus: function() {
+            this.isOnline = navigator.onLine;
         }
     },
     watch: {
         translateEnabled: function( val ) {
-            if( val === true ) {
+            if( val === true && this.isOnline ) {
                 this.doTranslate();
             }
         }
@@ -281,8 +290,18 @@ var verbApp = new Vue({
         if ( ieVersion > 0 ) {
             document.getElementsByTagName( 'html' )[0].classList.add( 'is--ie' );
         }
+
         document.getElementsByTagName( 'body' )[0].classList.add( 'is--loaded' );
+
+        this.updateOnlineStatus();
     }
+});
+
+window.addEventListener( 'online',  function() {
+    verbApp.updateOnlineStatus();
+});
+window.addEventListener( 'offline', function() {
+    verbApp.updateOnlineStatus();
 });
 
 function get( url ) {

@@ -23,9 +23,9 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "index.html",
+  "start_url": "/verbi/",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
-  "display": "browser",
+  "display": "standalone",
   "orientation": "portrait"
 }
