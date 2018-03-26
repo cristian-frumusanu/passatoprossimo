@@ -1,5 +1,5 @@
 {
-  "short_name": "PassatoProssimo",
+  "short_name": "PassPross",
   "name": "Controllore del passato prossimo",
   "icons": [
     {
@@ -21,6 +21,11 @@
       "src": "assets/img/icon_192x192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "assets/img/icon_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/verbi/",

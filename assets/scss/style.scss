@@ -101,7 +101,7 @@ body {
 		margin-top: 1em;
 	}
 
-	font-size: 14px;
+	font-size: 16px;
 	font-style: italic;
 
 	opacity: .7;
@@ -172,8 +172,7 @@ body {
 	top: 0;
 	transform: translateY(-100%);
 
-	display: none;
-	margin-top: -10px;
+	opacity: 0;
 	width: 100%;
 
 	text-align: center;
@@ -275,8 +274,8 @@ body {
 }
 
 .c-form__submit  { background-color: #e62739; }
-.c-form__resolve { background-color: #9068be; }
-.c-form__next    { background-color: #6ed3cf; }
+.c-form__resolve { background-color: #6A4299; }
+.c-form__next    { background-color: #20605E; }
 
 .c-form__translations {
 	display: none;
@@ -289,7 +288,7 @@ body {
 	.is--loaded & { display: flex;	}
 
 	.c-translation {
-		font-size: 14px;
+		font-size: 16px;
 		margin: 10px;
 		flex: 1 1 40%;
 		text-align: left;
@@ -311,7 +310,7 @@ body {
 			z-index: 2;
 
 			color: #fff;
-			font-size: 12px;
+			font-size: 16px;
 			line-height: 1;
 		}
 
@@ -328,7 +327,7 @@ body {
 
 			color: #000;
 			font-family: FontAwesome;
-			font-size: 40px;
+			font-size: 42px;
 		}
 	}
 
@@ -347,7 +346,7 @@ body {
 }
 
 .contact-text {
-	font-size: 12px;
+	font-size: 16px;
 	margin-top: 20px;
 	margin-bottom: 10px;
 }

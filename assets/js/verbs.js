@@ -1275,3 +1275,30 @@ var verbsReflexive = [
 ]
 
 verbs = verbs.concat( verbsReflexive );
+
+var conjAvere = [
+    'ho',
+    'hai',
+    'ha',
+    'abbiamo',
+    'avete',
+    'hanno'
+];
+
+var conjEssere = [
+    'sono',
+    'sei',
+    'è',
+    'siamo',
+    'siete',
+    'sono',
+];
+
+var conjEssereRifl = [
+    'mi sono',
+    'ti sei',
+    'si è',
+    'ci siamo',
+    'vi siete',
+    'si sono'
+];

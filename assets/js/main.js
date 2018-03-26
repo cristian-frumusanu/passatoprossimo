@@ -2,33 +2,6 @@
 
 window.globalDebug = false;
 
-var conjAvere = [
-    'ho',
-    'hai',
-    'ha',
-    'abbiamo',
-    'avete',
-    'hanno'
-];
-
-var conjEssere = [
-    'sono',
-    'sei',
-    'è',
-    'siamo',
-    'siete',
-    'sono',
-];
-
-var conjEssereRifl = [
-    'mi sono',
-    'ti sei',
-    'si è',
-    'ci siamo',
-    'vi siete',
-    'si sono'
-];
-
 var verbApp = new Vue({
     el: '.js-form',
     data: {
@@ -303,6 +276,10 @@ window.addEventListener( 'online',  function() {
 window.addEventListener( 'offline', function() {
     verbApp.updateOnlineStatus();
 });
+
+
+
+
 
 function get( url ) {
     return new Promise( function( resolve, reject ) {
